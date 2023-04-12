@@ -15,8 +15,6 @@ searchButton.addEventListener('click', function () {
 
 getCoords();
 });
-
-
 function getCoords() {
     fetch(queryURL)
     .then(function (response) {
@@ -28,18 +26,22 @@ function getCoords() {
         cityWindEl.textContent = `Wind: ${data.wind.speed} MPH`;
         cityHumidityEl.textContent = `Humidity: ${data.main.humidity}`;
         const imageURL = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
-        fetch(imageURL) 
-        .then((response) => {
+        
+        getIcon(imageURL)
+        getFiveDayURL(data.coord.lat, data.coord.lon);
+});
+}
+
+function getIcon(link) {
+    fetch(link)
+    .then(function (response) {
         return response;
     })
     .then((data) => {
         document.querySelector('#current-icon').src = data.url;
     })
-    getFiveDayURL(data.coord.lat, data.coord.lon);
-});
 }
 function getFiveDayURL(latitude, longitude) {
-console.log(latitude, longitude);
 const fiveDayURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${APIKey}&units=imperial`;
 console.log(fiveDayURL);
 fetch(fiveDayURL)
