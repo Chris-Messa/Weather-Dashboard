@@ -22,8 +22,8 @@
                 <div class="row m-5">
                     <aside id="search-bar" class="sidebar col-lg-3">
                         <h2>Search for a City:</h2>
-                        <input>
-                        <button class="btn btn-primary">Search</button>
+                        <input id ="search-input">
+                        <button class="btn btn-primary" id="search-btn">Search</button>
                         <hr/>
                         <div class="row">
                             <button class="btn btn-secondary m-2">
@@ -54,19 +54,19 @@
                     </aside>
                     <div class="col-lg-9" id="city-container">
                         <section class="border m-3" id="city-header">
-                            <h2 class="p-2" id="city-name"></h2>
-                            <p class="p-2">Temp:</p>
-                            <p class="p-2">Wind: </p>
-                            <p class="p-2">Humidity:</p>
+                            <h2 class="p-2" id="city-name"></h2><img id="current-icon">
+                            <p class="p-2" id="current-temperature"></p>
+                            <p class="p-2" id="current-wind"></p>
+                            <p class="p-2" id="current-humidity"></p>
                         </section>
                             <section class="m-3" id="forecast">
                                 <h2>5-day forecast</h2>
                                 <div class="row">
-                                    <div class="col-lg-2 border m-3"></div>
-                                    <div class="col-lg-2 border m-3"></div>
-                                    <div class="col-lg-2 border m-3"></div>
-                                    <div class="col-lg-2 border m-3"></div>
-                                    <div class="col-lg-2 border m-3"></div>
+                                    <div class="col-lg-2 border m-3" id="day-1"></div>
+                                    <div class="col-lg-2 border m-3" id="day-2"></div>
+                                    <div class="col-lg-2 border m-3" id="day-3"></div>
+                                    <div class="col-lg-2 border m-3" id="day-4"></div>
+                                    <div class="col-lg-2 border m-3" id="day-5"></div>
                                 </div>
                         </section>
                     </div>
