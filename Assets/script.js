@@ -52,6 +52,6 @@ fetch(fiveDayURL)
     return response.json();
 })
 .then((data) => {
-    forecastElList.children().textContent = data[0].main.dt;   
+    forecastElList.children.textContent = data.list[0].main.temp
 })
 }
