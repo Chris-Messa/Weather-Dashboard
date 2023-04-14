@@ -29,7 +29,7 @@ function getCoords() {
         cityWindEl.textContent = `Wind: ${data.wind.speed} MPH`;
         cityHumidityEl.textContent = `Humidity: ${data.main.humidity}`;
         const imageURL = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
-        
+       
         getIcon(imageURL)
         getFiveDayURL(data.coord.lat, data.coord.lon);
 });
@@ -52,6 +52,13 @@ fetch(fiveDayURL)
     return response.json();
 })
 .then((data) => {
-    forecastElList.children.textContent = data.list[0].main.temp
+    console.log(data);
+for (let i = 0; i < forecastElList.children.length; i++){
+    let forecastChildren = forecastElList.children[i].children[0];
+    console.log(forecastChildren)
+    forecastChildren.innerHTML = data.list[i + 9].main.temp
+    // foreca
+    // console.log(data.list[i].main)
+}
 })
 }
