@@ -6,18 +6,20 @@ const cityHumidityEl = document.querySelector('#current-humidity');
 const currentIconEl = document.querySelector('#current-icon');
 const searchButton = document.querySelector('#search-btn');
 const searchInputEl = document.querySelector('#search-input');
-
+const cityContainer = document.querySelector('#city-container');
+cityContainer.setAttribute('style', 'display: none;')
 
 searchButton.addEventListener('click', function () {
-    let searchedCity = searchInputEl.value.toLowerCase().trim();
+    cityContainer.setAttribute('style', 'display: block')
+    const searchedCity = searchInputEl.value.toLowerCase().trim();
     
     queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${searchedCity}&appid=${APIKey}&units=imperial`;
 
-getCoords();
+    getCoords();
 });
 function getCoords() {
     fetch(queryURL)
-    .then(function (response) {
+    .then((response) => {
         return response.json();
     })
     .then(function (data) {
@@ -34,7 +36,7 @@ function getCoords() {
 
 function getIcon(link) {
     fetch(link)
-    .then(function (response) {
+    .then((response) => {
         return response;
     })
     .then((data) => {
