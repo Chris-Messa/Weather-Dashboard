@@ -7,6 +7,7 @@ const currentIconEl = document.querySelector('#current-icon');
 const searchButton = document.querySelector('#search-btn');
 const searchInputEl = document.querySelector('#search-input');
 const cityContainer = document.querySelector('#city-container');
+const forecastElList = document.querySelector('#forecast-list');
 cityContainer.setAttribute('style', 'display: none;')
 
 searchButton.addEventListener('click', function () {
@@ -51,6 +52,6 @@ fetch(fiveDayURL)
     return response.json();
 })
 .then((data) => {
-    console.log(data);
+    forecastElList.children().textContent = data[0].main.dt;   
 })
 }
