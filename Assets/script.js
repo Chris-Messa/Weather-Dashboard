@@ -56,7 +56,7 @@ fetch(fiveDayURL)
 for (let i = 0; i < forecastElList.children.length; i++){
     let forecastChildren = forecastElList.children[i].children[0];
     console.log(forecastChildren)
-    forecastChildren.innerHTML = data.list[i + 9].main.temp
+    forecastChildren.innerHTML = `<div id="temp-${i}">${data.list[i + 9].main.temp}</div>`
     // foreca
     // console.log(data.list[i].main)
 }
