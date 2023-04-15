@@ -1,73 +1,103 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./Assets/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" 
-    rel="stylesheet" 
-    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" 
-    crossorigin="anonymous">
-</head>
-<body>
-
+    <link rel="stylesheet" href="./Assets/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
     <div id="body-wrap">
-        <header class="d-flex justify-content-center p-4 bg-primary">
-            <h1>Weather Dashboard</h1>
-        </header>
+      <header class="d-flex justify-content-center p-4 bg-primary">
+        <h1>Weather Dashboard</h1>
+      </header>
 
-            <main class="container-fluid">
-                <div class="row m-5">
-                    <aside id="search-bar" class="sidebar col-lg-3">
-                        <h2>Search for a City:</h2>
-                        <input id ="search-input">
-                        <button class="btn btn-primary" id="search-btn">Search</button>
-                        <hr/>
-                        <div class="row">
-                            <button class="btn btn-secondary m-2">
-                                city
-                            </button>
-                        </div>
-                    </aside>
-                    <div class="col-lg-9" id="city-container">
-                        <section class="border m-3" id="city-header">
-                            <h2 class="p-2" id="city-name"></h2><img id="current-icon">
-                            <p class="p-2" id="current-temperature"></p>
-                            <p class="p-2" id="current-wind"></p>
-                            <p class="p-2" id="current-humidity"></p>
-                        </section>
-                            <section class="m-3" id="forecast">
-                                <h2>5-day forecast</h2>
-                                <div class="row" id="forecast-list">
-                                    <div class="col-lg-2 border m-3 card" id="day-1">
-                                        <div class="card-body">the</div>
-                                    </div>
-                                    <div class="col-lg-2 border m-3 card" id="day-2">
-                                        <div class="card-body">fact</div>
-                                    </div>
-                                    <div class="col-lg-2 border m-3 card" id="day-3">
-                                        <div class="card-body">that</div>
-                                    </div>
-                                    <div class="col-lg-2 border m-3 card" id="day-4">
-                                        <div class="card-body">so</div>
-                                    </div>
-                                    <div class="col-lg-2 border m-3 card" id="day-5">
-                                        <div class="card-body">Many</div>
-                                    </div>
-                                </div>
-                        </section>
-                    </div>
-
+      <main class="container-fluid">
+        <div class="row m-5">
+          <aside id="search-bar" class="sidebar col-lg-3">
+            <h2>Search for a City:</h2>
+            <input id="search-input" />
+            <button class="btn btn-primary" id="search-btn">Search</button>
+            <hr />
+            <div class="row">
+              <button class="btn btn-secondary m-2">city</button>
+            </div>
+          </aside>
+          <div class="col-lg-9" id="city-container">
+            <section class="border m-3" id="city-header">
+              <h2 class="p-2" id="city-name"></h2>
+              <img id="current-icon" />
+              <p class="p-2" id="current-temperature"></p>
+              <p class="p-2" id="current-wind"></p>
+              <p class="p-2" id="current-humidity"></p>
+            </section>
+            <section class="m-3" id="forecast">
+              <h2>5-day forecast</h2>
+              <div class="row" id="forecast-list">
+                <div class="col-lg-2 border m-3 card" id="day-1">
+                  <div class="card-body">
+                    <div class="date" id="date-1"></div>
+                    <div class="icon"></div>
+                    <div class="temp" id="temp-1"></div>
+                    <div class="wind" id="wind-1"></div>
+                    <div class="humidity" id="humidity-1"></div>
+                  </div>
                 </div>
+                <div class="col-lg-2 border m-3 card" id="day-2">
+                  <div class="card-body">
+                    <div class="date" id="date-2"></div>
+                    <div class="icon"></div>
+                    <div class="temp" id="temp-2"></div>
+                    <div class="wind" id="wind-2"></div>
+                    <div class="humidity" id="humidity-2"></div>
+                  </div>
+                </div>
+                <div class="col-lg-2 border m-3 card" id="day-3">
+                  <div class="card-body">
+                    <div class="date" id="date-3"></div>
+                    <div class="icon"></div>
+                    <div class="temp" id="temp-3"></div>
+                    <div class="wind" id="wind-3"></div>
+                    <div class="humidity" id="humidity-3"></div>
+                  </div>
+                </div>
+                <div class="col-lg-2 border m-3 card" id="day-4">
+                  <div class="card-body">
+                    <div class="date" id="date-4"></div>
+                    <div class="icon"></div>
+                    <div class="temp" id="temp-4"></div>
+                    <div class="wind" id="wind-4"></div>
+                    <div class="humidity" id="humidity-4"></div>
+                  </div>
+                </div>
+                <div class="col-lg-2 border m-3 card" id="day-5">
+                  <div class="card-body">
+                     <div class="date" id="date-5"></div>
+                     <div class="icon"></div>
+                     <div class="temp" id="temp-5"></div>
+                     <div class="wind" id="wind-5"></div>
+                     <div class="humidity" id="humidity-5"></div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
 
-            </main>
-
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+      <script
+        src="https://code.jquery.com/jquery-3.6.4.min.js"
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
-        crossorigin="anonymous"></script>
-        <script src="./Assets/script.js"></script>
+        crossorigin="anonymous"
+      ></script>
+      <script src="./Assets/script.js"></script>
     </div>
-</body>
+  </body>
 </html>
