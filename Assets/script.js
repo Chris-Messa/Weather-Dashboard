@@ -13,7 +13,7 @@ cityContainer.setAttribute('style', 'display: none;')
 searchButton.addEventListener('click', function () {
     cityContainer.setAttribute('style', 'display: block')
     const searchedCity = searchInputEl.value.toLowerCase().trim();
-
+    localStorage.setItem("searched-city", searchedCity);
     queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${searchedCity}&appid=${APIKey}&units=imperial`;
 
     getCoords();
