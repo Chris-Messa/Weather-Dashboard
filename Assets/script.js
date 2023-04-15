@@ -44,6 +44,7 @@ function getIcon(link) {
             document.querySelector('#current-icon').src = data.url;
         })
 }
+
 function getFiveDayURL(latitude, longitude) {
     const fiveDayURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${APIKey}&units=imperial`;
     console.log(fiveDayURL);
@@ -55,11 +56,14 @@ function getFiveDayURL(latitude, longitude) {
             console.log(data);
             var listAt = 2;
             for (let i = 0; i < forecastElList.children.length; i++) {
+                // const imageURL = `https://openweathermap.org/img/wn/${data.list[listAt].weather[listAt].icon}@2x.png`
+    
+                // getIcon(imageURL)
                 let forecastChildren = forecastElList.children[i];
                 forecastChildren.children[0].children[0].textContent = data.list[listAt].dt_txt.slice(0, 10);
-                forecastChildren.children[0].children[1].textContent = `Temp: ${data.list[listAt].main.temp} °F`;
-                forecastChildren.children[0].children[2].textContent = `Wind: ${data.list[listAt].wind.speed} MPH`;
-                forecastChildren.children[0].children[3].textContent = `Humidity: ${data.list[listAt].main.humidity}%`;
+                forecastChildren.children[0].children[2].textContent = `Temp: ${data.list[listAt].main.temp} °F`;
+                forecastChildren.children[0].children[3].textContent = `Wind: ${data.list[listAt].wind.speed} MPH`;
+                forecastChildren.children[0].children[4].textContent = `Humidity: ${data.list[listAt].main.humidity}%`;
                 
                 listAt += 8;
             }
