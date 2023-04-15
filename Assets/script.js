@@ -53,12 +53,12 @@ fetch(fiveDayURL)
 })
 .then((data) => {
     console.log(data);
+    var listAt = 4;
 for (let i = 0; i < forecastElList.children.length; i++){
     let forecastChildren = forecastElList.children[i].children[0];
-    console.log(forecastChildren)
-    forecastChildren.innerHTML = `<div id="temp-${i}">${data.list[i + 9].main.temp}</div>`
-    // foreca
-    // console.log(data.list[i].main)
+    forecastChildren.innerHTML = `<div id="temp-${i}">${data.list[listAt].main.temp}</div>`
+    forecastChildren.children[i]
+    listAt += 8;
 }
 })
 }
