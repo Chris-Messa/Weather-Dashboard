@@ -14,8 +14,8 @@ searchButton.addEventListener('click', function () {
     cityContainer.setAttribute('style', 'display: block')
     const searchedCity = searchInputEl.value.toLowerCase().trim();
     localStorage.setItem("searched-city", searchedCity);
-    queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${searchedCity}&appid=${APIKey}&units=imperial`;
-
+    queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${searchedCity}&appid=${APIKey}&units=imperial`;
+    
 
     getCoords();
 });
@@ -47,7 +47,7 @@ function getIcon(link) {
 }
 
 function getFiveDayURL(latitude, longitude) {
-    const fiveDayURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=b4b306d022e640a29cb62888f869d314&units=imperial`;
+    const fiveDayURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${APIKey}&units=imperial`;
     console.log(fiveDayURL);
     fetch(fiveDayURL)
         .then((response) => {
